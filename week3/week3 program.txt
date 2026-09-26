@@ -1,0 +1,23 @@
+week 3 program
+
+import pandas as pd
+import numpy as np
+df=pd.read_csv("data_set_week3.csv")
+print("/////orginal dataset")
+print(df)
+print("/////finding the null values")
+print(df.isnull())
+numeric_coloums=["tempature","pressure","operating-hours","vibration"]
+for column in numeric_coloums:
+    df[column]=df[column].fillna(df[column].mean())
+df["status"]=df["status"].fillna("unknown")
+df=df.drop_duplicates()
+df["status"]=df["status"].str.strip().str.title()
+print("/////displying the dataset after the all corrections")
+print(df)
+print("////summary of dataset")
+print(df.describe())
+print("/////count of the states")
+print(df["status"].value_counts())
+df.to_csv("new_data_set_week3.csv",index=True)
+print("new data set is crated successfully")
