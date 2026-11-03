@@ -1,0 +1,11 @@
+mechain_data ,vibration,tempature,pressure,operating-hours,status
+m101,2.1,72.5,101.2,1200,normal
+m102,4.5,85.3,105.6,1500,warning
+m103,7.8,68.7,99.8,900,normal
+m104,5.2,91.2,110.3,1800,critical
+m105,2.8,76.5,102.5,1100,normal
+m106,4.1,88.5,108.7,1650,warning
+m107,2,70.7,100.1,950,normal
+m108,5.8,94.6,112.4,2000,critical
+m109,3.2,79.3,103.6,1300,normal
+m110,4,86.7,107.9,1550,warning
