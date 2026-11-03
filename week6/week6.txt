@@ -1,0 +1,29 @@
+import pandas as pd
+data={"tempature":[40,45,50,55,60,65,70,75],"pressure":[20,22,25,27,30,32,35,38],"status":["Normal","Normal","Normal","Normal","Overheating","Normal","Overheating","Overheating"]
+}
+df=pd.DataFrame(data)
+print(df)
+correlation=df["tempature"].corr(df["pressure"])
+print("\n correlation b/w tempature and pressure",round(correlation,2))
+if correlation>0.7:
+    print("there is a strong position correlation")
+elif correlation>0:
+    print("there is a positive correlation")
+elif correlation<-0.7:
+    print("there is a strong negative correlation")
+elif correlation<0:
+    print("there is a negative correlation")
+else:
+    print("there is a weak or no correlation")
+    
+total=len(df)
+overheating=(df["status"]=="overheating").sum()
+normal=(df["status"]=="Normal").sum()
+p_overheating=overheating/total
+p_normal=normal/total
+print("probability analysis")
+print("total oberation ",total)
+print("overheating observation",overheating)
+print("normal observation ",normal)
+print("probility of overheating",round(p_overheating,2))
+print("probility of normal",round(p_normal,2))
